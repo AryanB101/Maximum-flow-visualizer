@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="google-site-verification" content="Vh7a4nwxfce4NZzuKMaNUPX9FPi7RKDXsaNBpb_RdHQ" />
+	<title>MaxFlow algorithm</title>
+	<script type="text/javascript" src="lib/vis-network.min.js"></script>
+
+	<style type="text/css">
+		.graphs {
+			height: 500px;
+			border: 1px solid lightgray;
+		}
+
+		#graphs-flowNetDup {
+			columns: 2;
+		}
+
+		#buttons-flowNetDup {
+			columns: 2;
+		}
+
+		.slider {
+			-webkit-appearance: none;
+			width: 30%;
+			height: 15px;
+			border-radius: 5px;
+			background: #d3d3d3;
+			outline: none;
+			opacity: 0.7;
+			-webkit-transition: .2s;
+			transition: opacity .2s;
+		}
+
+		.slider::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background: #4CAF50;
+			cursor: pointer;
+		}
+
+		.slider::-moz-range-thumb {
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background: #4CAF50;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="graphs-flowNetDup">
+		<div class="graphs" id="flowNet"></div>
+		<div class="graphs" hidden=1 id="flowNetDup"></div>
+	</div>
+	<div id="buttons-flowNetDup">
+		<button id="btnEmptyGraph" type="button" onclick="displayEmptyGraph()">EMPTY GRAPH</button>
+		<button id="btnRandomGraph" type="button" onclick="displayRandomGraph()">RANDOM GRAPH</button>
+		<button id="btnRefreshGraph" type="button" onclick="refreshAlgorithm()">REFRESH GRAPH</button>
+		<button class="btnsRunAlgorithm" id="btnRunEdmondsKarp"  type="button" onclick="runEdmondsKarpAlgorithm()">RUN EDMONDS-KARP</button>
+	</div>
+	<br>
+	<div class="slidecontainer">
+		<label>Execution speed: <br></label>
+		<input type="range" min="10" max="2000" value="1000" class="slider" id="algoSpeedRange">
+	</div>
+	<script type="text/javascript" src="js/MaxFlow.js"></script>
+	<script type="text/javascript" src="js/Visual.js"></script>
+</body>
+
+</html>
